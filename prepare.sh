@@ -13,7 +13,7 @@ git clone https://git.lede-project.org/source.git
 [ $? != 0 ] && echo "git clone failed!!!" && exit -1
 #pushd .
 cd source
-git checkout $LEDE_STABLE_RELEASE
-[ $? != 0 ] && echo "git checkout failed!!!" && exit -1
-git pull . $LEDE_STABLE_RELEASE
+#git checkout $LEDE_STABLE_RELEASE
+#[ $? != 0 ] && echo "git checkout failed!!!" && exit -1
+git pull . #$LEDE_STABLE_RELEASE
 [ $? != 0 ] && echo "git pull failed!!!" && exit -1
