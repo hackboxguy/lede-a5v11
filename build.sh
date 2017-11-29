@@ -23,13 +23,15 @@ LEDE_OUTPUT_FOLDER=$LEDE_OUTPUT_FOLDER/$LEDE_IMAGE_VERSION
 
 mkdir -p $LEDE_OUTPUT_FOLDER
 echo $LEDE_SYSTEM_CONFIG > $LEDE_OUTPUT_FOLDER/BoardConfig.txt
-cp configs/$LEDE_SYSTEM_CONFIG/$LEDE_SYSTEM_CONFIG $LEDE_FOLDER/.config
+#cp configs/$LEDE_SYSTEM_CONFIG/$LEDE_SYSTEM_CONFIG $LEDE_FOLDER/.config
 pushd .
 cd $LEDE_FOLDER
 ln -s ../configs/$LEDE_SYSTEM_CONFIG/rootfs_overlay files #create custom-files overlay
 ./scripts/feeds update -a
 EXTRA_PKGS=$(cat ../configs/$LEDE_SYSTEM_CONFIG/extra_packages)
 ./scripts/feeds install $EXTRA_PKGS
+cp ../configs/$LEDE_SYSTEM_CONFIG/$LEDE_SYSTEM_CONFIG $LEDE_FOLDER/.config
+echo $BUILDNUMBER > files/etc/version.txt #include lede-a5v11 version number file
 make defconfig
 make -j41 #O=$LEDE_OUTPUT_FOLDER -j41 #$BR_BOARD_CONFIG BRBOX_RELVERSION=$IMAGE_VERSION BRBOX_BUILDNUM=$TMP_BUILDNUM BRBOX_SYSCONFIG=$BR_BOARD_SYSTEM_CONFIG
 popd
