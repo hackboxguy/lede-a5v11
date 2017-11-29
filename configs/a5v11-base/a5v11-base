@@ -9,7 +9,9 @@ CONFIG_DOWNLOAD_FOLDER="$(TOPDIR)/../lede-dl"
 # CONFIG_FEED_telephony is not set
 CONFIG_LOCALMIRROR="$(TOPDIR)/../lede-pkgs"
 CONFIG_PACKAGE_i2c-tools=y
+CONFIG_PACKAGE_iperf=y
 CONFIG_PACKAGE_kmod-i2c-core=y
 CONFIG_PACKAGE_kmod-i2c-tiny-usb=y
 CONFIG_PACKAGE_librt=y
 # CONFIG_PACKAGE_opkg is not set
+CONFIG_PACKAGE_uclibcxx=y
