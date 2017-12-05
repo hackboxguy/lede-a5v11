@@ -30,6 +30,10 @@ pushd .
 cd $LEDE_FOLDER
 ln -s ../configs/$LEDE_SYSTEM_CONFIG/rootfs_overlay files #create custom-files overlay
 ./scripts/feeds update -a
+
+#todo: update feeds/package.index file with custom package data.
+../configs/$LEDE_SYSTEM_CONFIG/update-package-index.sh
+
 EXTRA_PKGS=$(cat ../configs/$LEDE_SYSTEM_CONFIG/extra_packages)
 ./scripts/feeds install $EXTRA_PKGS
 cp ../configs/$LEDE_SYSTEM_CONFIG/$LEDE_SYSTEM_CONFIG ./.config
