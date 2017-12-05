@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/libs/AdSttngs/Makefile
+Package: AdSttngs
+Version: 0.1.1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread
+Conflicts:
+Menu-Depends:
+Provides:
+Section: libs
+Category: Libraries
+Repository: base
+Title: Common Library for persistent settings access
+Maintainer: Albert David <albert dot david at gmail.com>
+Source: AdSttngs-0.1.tar.gz
+License: LGPL-2.1
+LicenseFiles: COPYING.txt
+Type: ipkg
+Description:   libAdSttngs is used for accessing persistent data stored as key/value pair.
+https://github.com/hackboxguy/brbox/tree/master/sources/lib/lib-settings
+Albert David <albert dot david at gmail.com>
+@@
+
