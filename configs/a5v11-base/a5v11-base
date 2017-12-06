@@ -8,6 +8,7 @@ CONFIG_DOWNLOAD_FOLDER="$(TOPDIR)/../lede-dl"
 # CONFIG_FEED_routing is not set
 # CONFIG_FEED_telephony is not set
 CONFIG_LOCALMIRROR="$(TOPDIR)/../lede-pkgs"
+CONFIG_PACKAGE_AdDisp=y
 CONFIG_PACKAGE_AdSttngs=y
 # CONFIG_PACKAGE_dnsmasq is not set
 # CONFIG_PACKAGE_firewall is not set
