@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/libs/AdDisp/Makefile
+Package: AdDisp
+Version: 0.1.1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread
+Conflicts:
+Menu-Depends:
+Provides:
+Section: libs
+Category: Libraries
+Repository: base
+Title: Common Library for accessing ssd_1306 oled display
+Maintainer: Albert David <albert dot david at gmail.com>
+Source: AdDisp-0.1.tar.gz
+License: LGPL-2.1
+LicenseFiles: COPYING.txt
+Type: ipkg
+Description:   libAdDisp is used for accessing ssd_1306 oled display
+https://github.com/hackboxguy/brbox/tree/master/sources/lib/lib-display
+Albert David <albert dot david at gmail.com>
+@@
+
