@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/utils/sysmgr/Makefile
+Package: sysmgr
+Version: 0.1.1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libAdSttngs +libAdCmn
+Conflicts:
+Menu-Depends:
+Provides:
+Section: utils
+Category: Utilities
+Repository: base
+Title: system manager service with json-rpc access
+Maintainer: Albert David <albert dot david at gmail.com>
+Source: sysmgr-0.1.tar.gz
+License: LGPL-2.1
+LicenseFiles: COPYING.txt
+Type: ipkg
+Description:   sysmgr is used for accessing linux system properties of targer h/w.
+https://github.com/hackboxguy/brbox/tree/master/sources/services/sysmgr
+Albert David <albert dot david at gmail.com>
+@@
+
