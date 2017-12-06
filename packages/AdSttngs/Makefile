@@ -36,7 +36,7 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/settings.h $(1)/usr/include/
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/*.h* $(1)/usr/include/
 
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libAdSttngs.so* $(1)/usr/lib/
