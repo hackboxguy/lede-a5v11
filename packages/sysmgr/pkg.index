@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/utils/sysmgr/Makefile
 Package: sysmgr
 Version: 0.1.1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libAdSttngs +libAdCmn
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libjson-c +AdSttngs +AdCmn
 Conflicts:
 Menu-Depends:
 Provides:

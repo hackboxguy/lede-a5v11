@@ -26,28 +26,29 @@ define Package/sysmgr
   CATEGORY:=Utilities
   TITLE:=system manager service with json-rpc access
   URL:=https://github.com/hackboxguy/brbox/tree/master/sources/services/sysmgr
-  DEPENDS:=+libc +libstdcpp +libAdSttngs +libAdCmn
+  DEPENDS:=+libc +libstdcpp +AdSttngs +AdCmn +libjson-c
 endef
 
 define Package/sysmgr/description
   sysmgr is used for accessing linux system properties of targer h/w.
 endef
+CMAKE_OPTIONS += -DAUTO_SVN_VERSION=OFF
+CMAKE_OPTIONS += -DINSTALL_MY_HEADERS=OFF
+CMAKE_OPTIONS += -DSTARTNUM=71
+CMAKE_OPTIONS += -DCMAKE_CXX_COMPILER=mipsel-openwrt-linux-g++
 
-define Build/InstallDev
-	$(INSTALL_DIR) $(1)/usr/include
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/*.h* $(1)/usr/include/
+define Package/sysmgr/install #Build/InstallDev
+	$(INSTALL_DIR) $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/sysmgr* $(1)/usr/bin/
 
-	$(INSTALL_DIR) $(1)/usr/lib
-	$(CP) $(PKG_INSTALL_DIR)/usr/bin/sysmgr* $(1)/usr/bin/
-
-	#$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
-	#$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/libAdSttngs.pc $(1)/usr/lib/pkgconfig/
+	$(INSTALL_DIR) $(1)/etc/init.d
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/usr/etc/init.d/*StartupScr $(1)/etc/init.d/
 endef
 
-define Package/sysmgr/install
-	$(INSTALL_DIR) $(1)/usr/lib
-	$(CP) $(PKG_INSTALL_DIR)/usr/bin/sysmgr* $(1)/usr/bin/
-endef
+#define Package/sysmgr/install
+#	$(INSTALL_DIR) $(1)/usr/bin
+#	$(CP) $(PKG_INSTALL_DIR)/usr/bin/sysmgr* $(1)/usr/bin/
+#endef
 
 $(eval $(call BuildPackage,sysmgr))
 
