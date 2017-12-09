@@ -15,3 +15,7 @@ cat ../packages/AdCmn/pkg.index >> feeds/packages.index
 #sysmgr
 ln -s ../../../../packages/sysmgr feeds/packages/utils/sysmgr
 cat ../packages/sysmgr/pkg.index >> feeds/packages.index
+
+#dispsrv
+ln -s ../../../../packages/dispsrv feeds/packages/utils/dispsrv
+cat ../packages/dispsrv/pkg.index >> feeds/packages.index
