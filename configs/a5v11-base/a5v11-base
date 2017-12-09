@@ -12,6 +12,7 @@ CONFIG_PACKAGE_AdCmn=y
 CONFIG_PACKAGE_AdDisp=y
 CONFIG_PACKAGE_AdSttngs=y
 CONFIG_PACKAGE_sysmgr=y
+CONFIG_PACKAGE_dispsrv=y
 # CONFIG_PACKAGE_dnsmasq is not set
 # CONFIG_PACKAGE_firewall is not set
 # CONFIG_PACKAGE_ip6tables is not set
