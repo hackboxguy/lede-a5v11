@@ -38,11 +38,11 @@ CMAKE_OPTIONS += -DSTARTNUM=71
 CMAKE_OPTIONS += -DCMAKE_CXX_COMPILER=mipsel-openwrt-linux-g++
 
 define Package/sysmgr/install #Build/InstallDev
-	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/sysmgr* $(1)/usr/bin/
+	$(INSTALL_DIR) $(1)/opt/fmw/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/sysmgr* $(1)/opt/fmw/bin/
 
 	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/usr/etc/init.d/*StartupScr $(1)/etc/init.d/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/etc/init.d/WrtSysmgrStartupScr $(1)/etc/init.d/
 endef
 
 #define Package/sysmgr/install

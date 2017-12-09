@@ -33,7 +33,7 @@ endef
 define Package/AdDisp/description
   libAdDisp is used for accessing ssd_1306 oled display
 endef
-
+CMAKE_OPTIONS += -DCMAKE_CXX_COMPILER=mipsel-openwrt-linux-g++
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include
 	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/ArduiPi_OLED.h $(1)/usr/include/
