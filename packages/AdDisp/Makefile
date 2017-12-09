@@ -36,7 +36,7 @@ endef
 CMAKE_OPTIONS += -DCMAKE_CXX_COMPILER=mipsel-openwrt-linux-g++
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/ArduiPi_OLED.h $(1)/usr/include/
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/*.h $(1)/usr/include/
 
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libAdDisp.so* $(1)/usr/lib/
@@ -46,6 +46,9 @@ define Build/InstallDev
 endef
 
 define Package/AdDisp/install
+	#$(INSTALL_DIR) $(1)/usr/include
+	#$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/ArduiPi_OLED*.h $(1)/usr/include/
+	
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libAdDisp.so* $(1)/usr/lib/
 endef
