@@ -1,10 +1,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gloox
-PKG_VERSION:=1.0
-PKG_RELEASE:=16
+PKG_VERSION:=1.0.16
+PKG_RELEASE:=1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).$(PKG_RELEASE).tar.bz2
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=http://camaya.net/download/gloox-1.0.16.tar.bz2
 
 PKG_LICENSE:=LGPL-2.1
