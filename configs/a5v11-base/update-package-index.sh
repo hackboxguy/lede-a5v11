@@ -19,3 +19,8 @@ cat ../packages/sysmgr/pkg.index >> feeds/packages.index
 #dispsrv
 ln -s ../../../../packages/dispsrv feeds/packages/utils/dispsrv
 cat ../packages/dispsrv/pkg.index >> feeds/packages.index
+
+#gloox
+ln -s ../../../../packages/gloox feeds/packages/libs/gloox
+cat ../packages/gloox/pkg.index >> feeds/packages.index
+

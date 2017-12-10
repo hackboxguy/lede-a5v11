@@ -1,0 +1,59 @@
+include $(TOPDIR)/rules.mk
+
+PKG_NAME:=gloox
+PKG_VERSION:=1.0
+PKG_RELEASE:=16
+
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).$(PKG_RELEASE).tar.bz2
+PKG_SOURCE_URL:=http://camaya.net/download/gloox-1.0.16.tar.bz2
+
+PKG_LICENSE:=LGPL-2.1
+PKG_LICENSE_FILES:=COPYING.txt
+
+PKG_MAINTAINER:=Albert David <albert dot david at gmail.com>
+
+PKG_BUILD_PARALLEL:=1
+PKG_INSTALL:=1
+#CMAKE_INSTALL:=1
+
+PKG_FIXUP:=autoreconf
+include $(INCLUDE_DIR)/package.mk
+
+#include $(INCLUDE_DIR)/uclibc++.mk
+#include $(INCLUDE_DIR)/package.mk
+#include $(INCLUDE_DIR)/cmake.mk
+
+define Package/gloox
+  SECTION:=libs
+  CATEGORY:=Libraries
+  TITLE:=C++ xmpp client library.
+  URL:=https://camaya.net/gloox/
+  DEPENDS:=+libstdcpp +libcrypto +libssl +libz
+endef
+
+define Package/gloox/description
+  libgloox provides library functionality for implmenting xmpp client in c++.
+endef
+
+CONFIGURE_ARGS += --with-openssl=$(STAGING_DIR)/usr
+#CMAKE_OPTIONS += -DCMAKE_CXX_COMPILER=mipsel-openwrt-linux-g++
+
+define Build/InstallDev
+	#$(INSTALL_DIR) $(1)/usr/include
+	#$(CP) $(PKG_BUILD_DIR)/src/gloox.h $(1)/usr/include
+	#$(INSTALL_DIR) $(1)/usr/lib
+	#$(CP) $(PKG_BUILD_DIR)/src/.libs/libgloox.so* $(1)/usr/lib
+
+	$(INSTALL_DIR) $(1)/usr/include
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/*.h* $(1)/usr/include/
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libgloox.so* $(1)/usr/lib/
+endef
+
+define Package/gloox/install
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libgloox.so* $(1)/usr/lib/
+endef
+
+$(eval $(call BuildPackage,gloox))
+
