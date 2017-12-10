@@ -1,11 +1,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gloox
-PKG_VERSION:=1.0.16
+PKG_VERSION:=1.0.20
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=http://camaya.net/download/gloox-1.0.16.tar.bz2
+PKG_SOURCE_URL:=http://camaya.net/download/gloox-1.0.20.tar.bz2
 
 PKG_LICENSE:=LGPL-2.1
 PKG_LICENSE_FILES:=COPYING.txt
@@ -35,9 +35,10 @@ define Package/gloox/description
   libgloox provides library functionality for implmenting xmpp client in c++.
 endef
 
-#CONFIGURE_ARGS += --with-openssl=$(STAGING_DIR)/usr
+CONFIGURE_ARGS += --with-openssl
+#=$(STAGING_DIR)/usr
 #CMAKE_OPTIONS += -DCMAKE_CXX_COMPILER=mipsel-openwrt-linux-g++
-CONFIGURE_ARGS += \
+#CONFIGURE_ARGS += \
                 --with-openssl="$(STAGING_DIR)/usr"
 
 define Build/InstallDev

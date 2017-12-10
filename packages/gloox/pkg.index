@@ -1,6 +1,6 @@
 Source-Makefile: feeds/packages/libs/gloox/Makefile
 Package: gloox
-Version: 1.0.16
+Version: 1.0.20
 Depends: +libc +libstdcpp +libopenssl +zlib
 Conflicts:
 Menu-Depends:
