@@ -28,15 +28,17 @@ define Package/gloox
   CATEGORY:=Libraries
   TITLE:=C++ xmpp client library.
   URL:=https://camaya.net/gloox/
-  DEPENDS:=+libstdcpp +libcrypto +libssl +libz
+  DEPENDS:=+libstdcpp +libopenssl +zlib
 endef
 
 define Package/gloox/description
   libgloox provides library functionality for implmenting xmpp client in c++.
 endef
 
-CONFIGURE_ARGS += --with-openssl=$(STAGING_DIR)/usr
+#CONFIGURE_ARGS += --with-openssl=$(STAGING_DIR)/usr
 #CMAKE_OPTIONS += -DCMAKE_CXX_COMPILER=mipsel-openwrt-linux-g++
+CONFIGURE_ARGS += \
+                --with-openssl="$(STAGING_DIR)/usr"
 
 define Build/InstallDev
 	#$(INSTALL_DIR) $(1)/usr/include
@@ -45,7 +47,7 @@ define Build/InstallDev
 	#$(CP) $(PKG_BUILD_DIR)/src/.libs/libgloox.so* $(1)/usr/lib
 
 	$(INSTALL_DIR) $(1)/usr/include
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/*.h* $(1)/usr/include/
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/gloox/*.h* $(1)/usr/include/
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libgloox.so* $(1)/usr/lib/
 endef
