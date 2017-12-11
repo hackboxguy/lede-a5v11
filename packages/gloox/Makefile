@@ -35,7 +35,10 @@ define Package/gloox/description
   libgloox provides library functionality for implmenting xmpp client in c++.
 endef
 
-CONFIGURE_ARGS += --with-openssl="$(STAGING_DIR)/usr" 
+CONFIGURE_ARGS += \
+		--with-openssl="$(STAGING_DIR)/usr" \
+		--with-tests="no" \
+		--with-examples="no"
 
 define Build/InstallDev
 
