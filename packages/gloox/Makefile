@@ -28,7 +28,8 @@ define Package/gloox
   CATEGORY:=Libraries
   TITLE:=C++ xmpp client library.
   URL:=https://camaya.net/gloox/
-  DEPENDS:=+libstdcpp +libopenssl +zlib
+  DEPENDS:=+libstdcpp +zlib 
+  #+libopenssl 
 endef
 
 define Package/gloox/description
@@ -36,10 +37,9 @@ define Package/gloox/description
 endef
 
 CONFIGURE_ARGS += \
-		--with-openssl="$(STAGING_DIR)/usr" \
 		--with-tests="no" \
 		--with-examples="no"
-
+		#--with-openssl="$(STAGING_DIR)/usr" 
 define Build/InstallDev
 
 	$(INSTALL_DIR) $(1)/usr/include
