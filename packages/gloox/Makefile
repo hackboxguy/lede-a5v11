@@ -1,11 +1,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=gloox
-PKG_VERSION:=1.0.20
+PKG_VERSION:=1.0.16
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=http://camaya.net/download/gloox-1.0.20.tar.bz2
+PKG_SOURCE_URL:=http://camaya.net/download/gloox-1.0.16.tar.bz2
 
 PKG_LICENSE:=LGPL-2.1
 PKG_LICENSE_FILES:=COPYING.txt
@@ -28,7 +28,7 @@ define Package/gloox
   CATEGORY:=Libraries
   TITLE:=C++ xmpp client library.
   URL:=https://camaya.net/gloox/
-  DEPENDS:=+libstdcpp +zlib 
+  DEPENDS:=+libstdcpp +zlib +libopenssl
   #+libopenssl 
 endef
 
@@ -38,9 +38,8 @@ endef
 
 CONFIGURE_ARGS += \
 		--with-tests="no" \
-		--with-examples="no" 
-		#--prefix=$(CONFIGURE_PREFIX)	
-		#--with-openssl="$(STAGING_DIR)/usr" 
+		--with-examples="no" \
+		--with-openssl="$(STAGING_DIR)/usr"
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/gloox
 	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/gloox/*.h* $(1)/usr/include/gloox/
