@@ -38,14 +38,17 @@ endef
 
 CONFIGURE_ARGS += \
 		--with-tests="no" \
-		--with-examples="no"
+		--with-examples="no" 
+		#--prefix=$(CONFIGURE_PREFIX)	
 		#--with-openssl="$(STAGING_DIR)/usr" 
 define Build/InstallDev
-
-	$(INSTALL_DIR) $(1)/usr/include
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/gloox/*.h* $(1)/usr/include/
+	$(INSTALL_DIR) $(1)/usr/include/gloox
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/gloox/*.h* $(1)/usr/include/gloox/
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libgloox.so* $(1)/usr/lib/
+	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/gloox.pc $(1)/usr/lib/pkgconfig/
+
 endef
 
 define Package/gloox/install
