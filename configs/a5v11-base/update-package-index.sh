@@ -25,8 +25,8 @@ ln -s ../../../../packages/gloox feeds/packages/libs/gloox
 cat ../packages/gloox/pkg.index >> feeds/packages.index
 
 #libstrophe
-ln -s ../../../../packages/libstrophe feeds/packages/libs/libstrophe
-cat ../packages/libstrophe/pkg.index >> feeds/packages.index
+#ln -s ../../../../packages/libstrophe feeds/packages/libs/libstrophe
+#cat ../packages/libstrophe/pkg.index >> feeds/packages.index
 
 #xmproxy
 ln -s ../../../../packages/xmproxy feeds/packages/utils/xmproxy
