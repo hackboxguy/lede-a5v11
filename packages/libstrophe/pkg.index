@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/libs/libstrophe/Makefile
+Package: libstrophe
+Version: 0.9.1
+Depends: +libc
+Conflicts:
+Menu-Depends:
+Provides:
+Section: libs
+Category: Libraries
+Repository: base
+Title: C xmpp client library.
+Maintainer: Albert David <albert dot david at gmail.com>
+Source: libstrophe-0.9.1.tar.bz2
+License: LGPL-2.1
+LicenseFiles: COPYING.txt
+Type: ipkg
+Description:   libstrophe provides library functionality for implmenting xmpp client in c.
+http://strophe.im/libstrophe/
+Albert David <albert dot david at gmail.com>
+@@
+
