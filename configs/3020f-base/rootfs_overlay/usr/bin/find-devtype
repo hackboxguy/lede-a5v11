@@ -16,6 +16,7 @@ BD_TYP_X86_64="X86_64"
 BD_TYP_X86_32="X86_32"
 BD_TYP_BBB="BBB"
 BD_TYP_A5V11="A5_V11"
+BD_TYP_NEXX3020="NEXX_3020"
 BD_TYP_DEFAULT="Unknown"
 ###############################################################################
 ReadRaspiType()
@@ -118,6 +119,11 @@ RESULT=$(cat /proc/cpuinfo | grep "machine" | grep "A5-V11" )
 if [ $? = "0" ]; then
 	echo $BD_TYP_A5V11
 	return 0
+fi
+
+RESULT=$(cat /proc/cpuinfo | grep "machine" | grep "Nexx WT3020" )
+if [ $? = "0" ]; then
+	echo $BD_TYP_NEXX3020
 fi
 
 echo $BD_TYP_DEFAULT
