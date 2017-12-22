@@ -124,6 +124,7 @@ fi
 RESULT=$(cat /proc/cpuinfo | grep "machine" | grep "Nexx WT3020" )
 if [ $? = "0" ]; then
 	echo $BD_TYP_NEXX3020
+	return 0
 fi
 
 echo $BD_TYP_DEFAULT
