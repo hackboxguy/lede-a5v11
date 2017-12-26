@@ -37,7 +37,11 @@ ln -s ../configs/$LEDE_SYSTEM_CONFIG/rootfs_overlay files #create custom-files o
 EXTRA_PKGS=$(cat ../configs/$LEDE_SYSTEM_CONFIG/extra_packages)
 ./scripts/feeds install $EXTRA_PKGS
 cp ../configs/$LEDE_SYSTEM_CONFIG/$LEDE_SYSTEM_CONFIG ./.config
+#prepare /etc/version.txt file
 echo $BUILDNUMBER > files/etc/version.txt #include lede-a5v11 version number file
+#prepare /boot/sysconfig.txt file
+mkdir -p files/boot
+echo $LEDE_SYSTEM_CONFIG > files/boot/sysconfig.txt
 
 make defconfig
 
