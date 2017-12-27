@@ -31,3 +31,7 @@ cat ../packages/gloox/pkg.index >> feeds/packages.index
 #xmproxy
 ln -s ../../../../packages/xmproxy feeds/packages/utils/xmproxy
 cat ../packages/xmproxy/pkg.index >> feeds/packages.index
+
+#onion
+ln -s ../../../../packages/onion feeds/packages/libs/onion
+cat ../packages/onion/pkg.index >> feeds/packages.index

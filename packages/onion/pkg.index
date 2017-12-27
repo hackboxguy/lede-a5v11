@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/libs/onion/Makefile
+Package: onion
+Version: 0.8.1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread
+Conflicts:
+Menu-Depends:
+Provides:
+Section: libs
+Category: Libraries
+Repository: base
+Title: open source http library for implementing http-api
+Maintainer: Albert David <albert dot david at gmail.com>
+Source: onion-0.8.tar.gz
+License: LGPL-3.0
+LicenseFiles: COPYING.txt
+Type: ipkg
+Description:   lib-onion is used for implementing http api.
+https://github.com/davidmoreno/onion/tree/v0.8
+Albert David <albert dot david at gmail.com>
+@@
+
