@@ -42,7 +42,7 @@ define Package/lightsense/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/lightsense* $(1)/opt/fmw/bin/
 
 	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/etc/init.d/WrtLightsenseStartupScr $(1)/etc/init.d/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/etc/init.d/WrtLightSenseSrvStartupScr $(1)/etc/init.d/
 endef
 
 
