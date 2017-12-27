@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/utils/apisrv/Makefile
+Package: apisrv
+Version: 0.1.1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libjson-c +AdSttngs +AdCmn +onion
+Conflicts:
+Menu-Depends:
+Provides:
+Section: utils
+Category: Utilities
+Repository: base
+Title: http-api service with json-rpc access
+Maintainer: Albert David <albert dot david at gmail.com>
+Source: apisrv-0.1.tar.gz
+License: LGPL-2.1
+LicenseFiles: COPYING.txt
+Type: ipkg
+Description:   apisrv acts as a proxy between http-service and the rpc's, it maps the http to json-rpc calls and vice-versa.
+https://github.com/hackboxguy/brbox/tree/master/sources/services/apisrv
+Albert David <albert dot david at gmail.com>
+@@
+

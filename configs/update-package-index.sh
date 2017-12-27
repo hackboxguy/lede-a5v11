@@ -36,3 +36,7 @@ cat ../packages/onion/pkg.index >> feeds/packages.index
 ln -s ../../../../packages/lightsense feeds/packages/utils/lightsense
 cat ../packages/lightsense/pkg.index >> feeds/packages.index
 
+#apisrv
+ln -s ../../../../packages/apisrv feeds/packages/utils/apisrv
+cat ../packages/apisrv/pkg.index >> feeds/packages.index
+
