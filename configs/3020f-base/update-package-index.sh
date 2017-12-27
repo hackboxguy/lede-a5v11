@@ -31,3 +31,8 @@ cat ../packages/xmproxy/pkg.index >> feeds/packages.index
 #onion
 ln -s ../../../../packages/onion feeds/packages/libs/onion
 cat ../packages/onion/pkg.index >> feeds/packages.index
+
+#lightsense
+ln -s ../../../../packages/lightsense feeds/packages/utils/lightsense
+cat ../packages/lightsense/pkg.index >> feeds/packages.index
+
