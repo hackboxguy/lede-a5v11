@@ -8,34 +8,32 @@ CONFIG_DOWNLOAD_FOLDER="$(TOPDIR)/../lede-dl"
 # CONFIG_FEED_routing is not set
 # CONFIG_FEED_telephony is not set
 CONFIG_LOCALMIRROR="$(TOPDIR)/../lede-pkgs"
-CONFIG_OPENSSL_WITH_COMPRESSION=y
-CONFIG_OPENSSL_WITH_DEPRECATED=y
-CONFIG_OPENSSL_WITH_EC=y
 CONFIG_PACKAGE_AdCmn=y
 CONFIG_PACKAGE_AdDisp=y
 CONFIG_PACKAGE_AdSttngs=y
 CONFIG_PACKAGE_dispsrv=y
 # CONFIG_PACKAGE_dnsmasq is not set
 # CONFIG_PACKAGE_firewall is not set
-CONFIG_PACKAGE_gloox=y
+CONFIG_PACKAGE_i2c-tools=y
 # CONFIG_PACKAGE_ip6tables is not set
 # CONFIG_PACKAGE_iptables is not set
 CONFIG_PACKAGE_kmod-i2c-core=y
 CONFIG_PACKAGE_kmod-i2c-tiny-usb=y
-CONFIG_PACKAGE_libopenssl=y
+CONFIG_PACKAGE_kmod-usb-serial=y
+CONFIG_PACKAGE_kmod-usb-serial-ftdi=y
+CONFIG_PACKAGE_kmod-usb-serial-pl2303=y
+CONFIG_PACKAGE_libncurses=y
 CONFIG_PACKAGE_librt=y
 CONFIG_PACKAGE_libstdcpp=y
 # CONFIG_PACKAGE_odhcp6c is not set
 # CONFIG_PACKAGE_odhcpd-ipv6only is not set
 # CONFIG_PACKAGE_opkg is not set
 # CONFIG_PACKAGE_ppp is not set
+CONFIG_PACKAGE_screen=y
 CONFIG_PACKAGE_sysmgr=y
+CONFIG_PACKAGE_terminfo=y
 # CONFIG_PACKAGE_wpad-mini is not set
-CONFIG_PACKAGE_xmproxy=y
 CONFIG_PACKAGE_zlib=y
-# CONFIG_OPENSSL_WITH_NPN is not set
-# CONFIG_OPENSSL_WITH_PSK is not set
-# CONFIG_OPENSSL_WITH_SRP is not set
 CONFIG_PACKAGE_kmod-ip6tables=y
 CONFIG_PACKAGE_kmod-ipt-conntrack=y
 CONFIG_PACKAGE_kmod-ipt-core=y
