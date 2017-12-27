@@ -47,8 +47,8 @@ CMAKE_OPTIONS += -DONION_USE_JPEG=false
 CMAKE_OPTIONS += -DONION_USE_PNG=false
 
 define Build/InstallDev
-	$(INSTALL_DIR) $(1)/usr/include
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/*.h* $(1)/usr/include/
+	$(INSTALL_DIR) $(1)/usr/include/onion
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/onion/*.h* $(1)/usr/include/onion/
 
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libonion.so* $(1)/usr/lib/
