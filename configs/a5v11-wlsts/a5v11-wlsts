@@ -1,0 +1,9 @@
+CONFIG_TARGET_ramips=y
+CONFIG_TARGET_ramips_rt305x=y
+CONFIG_TARGET_ramips_rt305x_DEVICE_a5-v11=y
+CONFIG_DEVEL=y
+CONFIG_DOWNLOAD_FOLDER="$(TOPDIR)/../lede-dl"
+CONFIG_LOCALMIRROR="$(TOPDIR)/../lede-pkgs"
+CONFIG_PACKAGE_kmod-i2c-core=y
+CONFIG_PACKAGE_kmod-i2c-tiny-usb=y
+
