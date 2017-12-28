@@ -40,3 +40,7 @@ cat ../packages/lightsense/pkg.index >> feeds/packages.index
 ln -s ../../../../packages/apisrv feeds/packages/utils/apisrv
 cat ../packages/apisrv/pkg.index >> feeds/packages.index
 
+#seabreeze
+ln -s ../../../../packages/seabreeze feeds/packages/libs/seabreeze
+cat ../packages/seabreeze/pkg.index >> feeds/packages.index
+
