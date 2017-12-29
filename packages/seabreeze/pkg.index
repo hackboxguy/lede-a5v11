@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/libs/seabreeze/Makefile
 Package: seabreeze
 Version: 3.0.11
-Depends: +libc +libstdcpp
+Depends: +libc +libstdcpp +libusb-1.0
 Conflicts:
 Menu-Depends:
 Provides:

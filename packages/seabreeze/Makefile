@@ -16,11 +16,11 @@ PKG_BUILD_PARALLEL:=1
 PKG_INSTALL:=1
 #CMAKE_INSTALL:=1
 
-PKG_FIXUP:=autoreconf
-include $(INCLUDE_DIR)/package.mk
+#PKG_FIXUP:=autoreconf
+#include $(INCLUDE_DIR)/package.mk
 
 #include $(INCLUDE_DIR)/uclibc++.mk
-#include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/package.mk
 #include $(INCLUDE_DIR)/cmake.mk
 
 define Package/seabreeze
@@ -28,7 +28,7 @@ define Package/seabreeze
   CATEGORY:=Libraries
   TITLE:=c library for accessing ocean-optics spectrometer.
   URL:=https://oceanoptics.com/product/seabreeze/
-  DEPENDS:=+libc +libstdcpp
+  DEPENDS:=+libc +libstdcpp +libusb-1.0
 endef
 
 define Package/seabreeze/description
@@ -39,15 +39,28 @@ endef
 #		--with-tests="no" \
 #		--with-examples="no" \
 #		--with-openssl="$(STAGING_DIR)/usr"
+#MAKE_FLAGS += \
+        CFLAGS="$(TARGET_CFLAGS)" \
+        LDFLAGS="$(TARGET_LDFLAGS)"
+#define Build/Configure
+ # $(call Build/Configure/Default,--with-linux-headers=$(LINUX_DIR))
+#endef
+define Build/Compile
+        $(MAKE) -C $(PKG_BUILD_DIR) \
+                CC="$(TARGET_CC)" \
+                LD="$(TARGET_CC)" \
+                LDFLAGS="$(TARGET_LDFLAGS)" \
+                all
+	$(MAKE) -C $(PKG_BUILD_DIR) \
+		PREFIX="$(PKG_INSTALL_DIR)/usr" \
+		install
+endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/seabreeze
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/seabreeze/*.h* $(1)/usr/include/seabreeze/
+	$(CP) -r $(PKG_INSTALL_DIR)/usr/include/seabreeze $(1)/usr/include/
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libseabreeze.so* $(1)/usr/lib/
-	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/seabreeze.pc $(1)/usr/lib/pkgconfig/
-
 endef
 
 define Package/seabreeze/install

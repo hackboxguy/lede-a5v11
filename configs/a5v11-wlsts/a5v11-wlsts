@@ -9,18 +9,13 @@ CONFIG_PACKAGE_AdSttngs=y
 CONFIG_PACKAGE_apisrv=y
 CONFIG_PACKAGE_kmod-i2c-core=y
 CONFIG_PACKAGE_kmod-i2c-tiny-usb=y
+# CONFIG_PACKAGE_kmod-ppp is not set
+CONFIG_PACKAGE_librt=y
 CONFIG_PACKAGE_libstdcpp=y
+CONFIG_PACKAGE_libusb-1.0=y
+CONFIG_PACKAGE_libusb-compat=y
 CONFIG_PACKAGE_lightsense=y
 CONFIG_PACKAGE_onion=y
 # CONFIG_PACKAGE_opkg is not set
 # CONFIG_PACKAGE_ppp is not set
-# CONFIG_PACKAGE_kmod-mppe is not set
-CONFIG_PACKAGE_kmod-ppp=y
-# CONFIG_PACKAGE_kmod-ppp-synctty is not set
-# CONFIG_PACKAGE_kmod-pppoa is not set
-CONFIG_PACKAGE_kmod-pppoe=y
-# CONFIG_PACKAGE_kmod-pppol2tp is not set
-CONFIG_PACKAGE_kmod-pppox=y
-# CONFIG_PACKAGE_kmod-pptp is not set
-CONFIG_PACKAGE_kmod-slhc=y
-CONFIG_PACKAGE_libpthread=y
+CONFIG_PACKAGE_seabreeze=y
