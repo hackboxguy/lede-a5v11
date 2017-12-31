@@ -24,34 +24,34 @@ lede-project based linux image creator for a5v11 router
 
 ### Details of xmpp chat bot command set
 #### version
-	Returns the version number of a5v11-xmpp firmware image.
+Returns the version number of a5v11-xmpp firmware image.
 #### sysupdate
-	Using wget, downloads latest a5v11-xmpp image from https://github.com/hackboxguy/downloads/blob/master/a5v11-xmpp.uimg to /tmp/ and then using sysupgrade, updates to this new image and then auto reboots(after reboot, a5v11 chat-bot comes back online)
+Using wget, downloads latest a5v11-xmpp image from https://github.com/hackboxguy/downloads/blob/master/a5v11-xmpp.uimg to /tmp/ and then using sysupgrade, updates to this new image and then auto reboots(after reboot, a5v11 chat-bot comes back online)
 #### reboot
-	Reboots the linux of a5v11
+Reboots the linux of a5v11
 #### uptime
-	Returns uptime of a5v11
+Returns uptime of a5v11
 #### publicip
-	Returns the public ip of your home broadband router.
+Returns the public ip of your home broadband router.
 #### localip
-	Returns the local ip of a5v11 assigned by your home router.
+Returns the local ip of a5v11 assigned by your home router.
 #### alias
-	Its like a script to do one or more actions ex: do ```alias allip=publicip;localip``` and then when you send ```allip``` both ip's will be shown.
+Its like a script to do one or more actions ex: do ```alias allip=publicip;localip``` and then when you send ```allip``` both ip's will be shown.
 #### sleep
-	```sleep 5``` a5v11 sleeps for 5seconds - useful for batch actions
+```sleep 5``` a5v11 sleeps for 5seconds - useful for batch actions
 #### account
-	Returns the username of chatbot ex:a5-v11-user@xabber.de 
+Returns the username of chatbot ex:a5-v11-user@xabber.de 
 #### botname
-	You can name your chat bots and identify them by name - useful when u have to manage multiple chat-bots.
-	ex: ```botname home-bot``` will set the name and ```botname``` will return last set botname
+You can name your chat bots and identify them by name - useful when u have to manage multiple chat-bots.
+ex: ```botname home-bot``` will set the name and ```botname``` will return last set botname
 #### buddylist
-	Its the xmpp rooster list(friends who are allowed to send messages to the chat-bot)
+Its the xmpp rooster list(friends who are allowed to send messages to the chat-bot)
 #### shellcmd
-	Executes the given command in a5v11's linux shell, ex: ```shellcmd ifconfig``` would execute ifconfig on a5v11's linux and result is sent to internal /tmp/shellcmd.resp
+Executes the given command in a5v11's linux shell, ex: ```shellcmd ifconfig``` would execute ifconfig on a5v11's linux and result is sent to internal /tmp/shellcmd.resp
 #### shellcmdresp
-	Reads the contents of /tmp/shellcmd.resp
+Reads the contents of /tmp/shellcmd.resp
 #### identify
-	Blinks the red led of a5v11 for 10seconds - helpful incase if your xabber-smart-phone-app has to manage multiple a5v11 chatbots
+Blinks the red led of a5v11 for 10seconds - helpful incase if your xabber-smart-phone-app has to manage multiple a5v11 chatbots
 
 
 
