@@ -1,4 +1,4 @@
-Source-Makefile: feeds/packages/libs/sshpass/Makefile
+Source-Makefile: feeds/packages/utils/sshpass/Makefile
 Package: sshpass
 Version: 1.06
 Depends: +libc +libstdcpp
