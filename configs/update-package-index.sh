@@ -44,3 +44,8 @@ cat ../packages/apisrv/pkg.index >> feeds/packages.index
 ln -s ../../../../packages/seabreeze feeds/packages/libs/seabreeze
 cat ../packages/seabreeze/pkg.index >> feeds/packages.index
 
+#sshpass
+ln -s ../../../../packages/sshpass feeds/packages/utils/sshpass
+cat ../packages/sshpass/pkg.index >> feeds/packages.index
+
+
