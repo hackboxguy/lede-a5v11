@@ -9,7 +9,8 @@ do
     esac
 done
 
-git clone https://git.lede-project.org/source.git
+#git clone https://git.lede-project.org/source.git
+git clone https://github.com/lede-project/source
 [ $? != 0 ] && echo "git clone failed!!!" && exit -1
 #pushd .
 cd source
