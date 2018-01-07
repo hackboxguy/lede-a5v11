@@ -8,4 +8,4 @@ config interface 'loopback'
 config interface 'lan0'
         option ifname 'eth0'
         option proto 'dhcp' 
-
+	option hostname 'my-a5v11'
