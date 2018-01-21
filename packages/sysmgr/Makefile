@@ -36,6 +36,7 @@ CMAKE_OPTIONS += -DAUTO_SVN_VERSION=OFF
 CMAKE_OPTIONS += -DINSTALL_MY_HEADERS=OFF
 CMAKE_OPTIONS += -DSTARTNUM=71
 CMAKE_OPTIONS += -DCMAKE_CXX_COMPILER=mipsel-openwrt-linux-g++
+CMAKE_OPTIONS += -DINSTALL_CLIENT=OFF #don not install sysmgrclt for saving the space
 
 define Package/sysmgr/install #Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/fmw/bin
