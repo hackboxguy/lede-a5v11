@@ -26,7 +26,7 @@ define Package/lightsense
   CATEGORY:=Utilities
   TITLE:=lightsensor service with json-rpc access
   URL:=https://github.com/hackboxguy/brbox/tree/master/sources/services/lightsense
-  DEPENDS:=+libc +libstdcpp +AdSttngs +AdCmn +libjson-c +libusb +libusb-compat +libseabreeze
+  DEPENDS:=+libc +libstdcpp +AdSttngs +AdCmn +libjson-c +libusb-1.0 +libusb-compat +seabreeze
 endef
 
 define Package/lightsense/description

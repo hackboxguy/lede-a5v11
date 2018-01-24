@@ -1,7 +1,7 @@
 Source-Makefile: feeds/packages/utils/lightsense/Makefile
 Package: lightsense
 Version: 0.1.1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libjson-c +AdSttngs +AdCmn +libusb +libusb-compat +libseabreeze
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +libjson-c +AdSttngs +AdCmn +libusb-1.0 +libusb-compat +seabreeze
 Conflicts:
 Menu-Depends:
 Provides:
