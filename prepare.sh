@@ -10,10 +10,12 @@ do
 done
 
 #git clone https://git.lede-project.org/source.git
-git clone https://github.com/lede-project/source
+#git clone https://github.com/lede-project/source
+git clone https://github.com/openwrt/openwrt
+
 [ $? != 0 ] && echo "git clone failed!!!" && exit -1
 #pushd .
-cd source
+cd openwrt #source
 #git checkout $LEDE_STABLE_RELEASE
 #[ $? != 0 ] && echo "git checkout failed!!!" && exit -1
 git pull . #$LEDE_STABLE_RELEASE
