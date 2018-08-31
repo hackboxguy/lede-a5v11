@@ -2,7 +2,7 @@
 #this script builds the lede-project binary for a5-v11 router.
 LEDE_SYSTEM_CONFIG=a5v11-base
 LEDE_IMAGE_VERSION=XX.YY
-LEDE_FOLDER=./source
+LEDE_FOLDER=./openwrt
 PREPARE_ONLY=0
 
 while getopts b:o:v:p f

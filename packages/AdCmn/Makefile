@@ -27,7 +27,7 @@ define Package/AdCmn
   CATEGORY:=Libraries
   TITLE:=Common Library including collection of classes for event/socket/signal/rcp etc.
   URL:=https://github.com/hackboxguy/brbox/tree/master/sources/lib/lib-adav-old
-  DEPENDS:=+libc +libstdcpp +libjson-c 
+  DEPENDS:=+libc +libstdcpp +libjson-c +AdSttngs 
 endef
 
 define Package/AdCmn/description
