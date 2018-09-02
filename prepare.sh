@@ -12,7 +12,9 @@ done
 #git clone https://git.lede-project.org/source.git
 #git clone https://github.com/lede-project/source
 #git clone https://github.com/openwrt/openwrt
-git clone https://git.openwrt.org/openwrt.git 
+#git clone https://git.openwrt.org/openwrt.git 
+
+git clone https://github.com/openwrt/openwrt.git -b openwrt-18.06
 [ $? != 0 ] && echo "git clone failed!!!" && exit -1
 #pushd .
 cd openwrt #source
