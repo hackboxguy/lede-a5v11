@@ -1,6 +1,6 @@
 #!/bin/bash
 #this script builds the lede-project binary for a5-v11 router.
-LEDE_STABLE_RELEASE=17.01.4
+LEDE_STABLE_RELEASE=openwrt-18.06
 
 while getopts v: f
 do
@@ -13,12 +13,9 @@ done
 #git clone https://github.com/lede-project/source
 #git clone https://github.com/openwrt/openwrt
 #git clone https://git.openwrt.org/openwrt.git 
-
-git clone https://github.com/openwrt/openwrt.git -b openwrt-18.06
+#git clone https://github.com/openwrt/openwrt.git -b $LEDE_STABLE_RELEASE
+git clone https://git.openwrt.org/openwrt/openwrt.git/ -b $LEDE_STABLE_RELEASE
 [ $? != 0 ] && echo "git clone failed!!!" && exit -1
-#pushd .
 cd openwrt #source
-#git checkout $LEDE_STABLE_RELEASE
-#[ $? != 0 ] && echo "git checkout failed!!!" && exit -1
-git pull . #$LEDE_STABLE_RELEASE
+git pull . 
 [ $? != 0 ] && echo "git pull failed!!!" && exit -1
