@@ -24,7 +24,7 @@ include $(INCLUDE_DIR)/cmake.mk
 define Package/dispsrv
   SECTION:=utils
   CATEGORY:=Utilities
-  TITLE:=modbus rtu master providing json-rpc based access
+  TITLE:=modbus rtu slave devices over network
   URL:=https://github.com/hackboxguy/brbox/tree/master/sources/services/modbussrv
   DEPENDS:=+libc +libstdcpp +AdSttngs +AdCmn +AdDisp +libjson-c +libmodbus
 endef
