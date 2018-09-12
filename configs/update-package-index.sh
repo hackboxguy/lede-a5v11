@@ -48,4 +48,8 @@ cat ../packages/seabreeze/pkg.index >> feeds/packages.index
 ln -s ../../../../packages/sshpass feeds/packages/utils/sshpass
 cat ../packages/sshpass/pkg.index >> feeds/packages.index
 
+#modbussrv
+ln -s ../../../../packages/modbussrv feeds/packages/utils/modbussrv
+cat ../packages/modbussrv/pkg.index >> feeds/packages.index
+
 
