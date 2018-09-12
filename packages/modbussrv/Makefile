@@ -21,7 +21,7 @@ include $(INCLUDE_DIR)/uclibc++.mk
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
-define Package/dispsrv
+define Package/modbussrv
   SECTION:=utils
   CATEGORY:=Utilities
   TITLE:=modbus rtu slave devices over network
