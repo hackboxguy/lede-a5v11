@@ -33,6 +33,7 @@ define Package/xmproxy/description
   xmproxy is acts a xmpp chat bot and provides the chat based access over internet.
 endef
 CMAKE_OPTIONS += -DAUTO_SVN_VERSION=OFF
+CMAKE_OPTIONS += -DINSTALL_CLIENT=ON
 CMAKE_OPTIONS += -DINSTALL_MY_HEADERS=OFF
 CMAKE_OPTIONS += -DSTARTNUM=73
 CMAKE_OPTIONS += -DCMAKE_CXX_COMPILER=mipsel-openwrt-linux-g++
