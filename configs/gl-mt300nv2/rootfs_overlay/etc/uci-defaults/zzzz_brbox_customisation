@@ -1,0 +1,35 @@
+#!/bin/sh
+#uci -q get dhcp.odhcpd && exit 0
+DEV_ID_PREFIX="brbox-"
+DEF_LAN_IP="192.168.10.1"
+MACADDR=$(cat /sys/class/net/eth0/address | sed 's/://g')
+uci -q batch <<-EOT
+	set network.lan.ipaddr=$DEF_LAN_IP
+	set wireless.radio0.disabled=0
+	set wireless.default_radio0.ssid=$DEV_ID_PREFIX$MACADDR
+	set wireless.default_radio0.encryption='psk2+aes'
+	set wireless.default_radio0.key='supersecretpw'
+	set system.@system[0].hostname=$DEV_ID_PREFIX$MACADDR
+
+	add firewall rule
+	set firewall.@rule[-1].src=wan
+	set firewall.@rule[-1].target=ACCEPT
+	set firewall.@rule[-1].proto=tcp
+	set firewall.@rule[-1].dest_port=22
+	
+
+	add firewall rule
+	set firewall.@rule[-1].src=wan
+	set firewall.@rule[-1].target=ACCEPT
+	set firewall.@rule[-1].proto=tcp
+	set firewall.@rule[-1].dest_port=8080
+	
+
+	add firewall rule
+	set firewall.@rule[-1].src=wan
+	set firewall.@rule[-1].target=ACCEPT
+	set firewall.@rule[-1].proto=tcp
+	set firewall.@rule[-1].dest_port=1883
+	
+	commit 
+EOT
