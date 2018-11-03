@@ -30,6 +30,13 @@ uci -q batch <<-EOT
 	set firewall.@rule[-1].target=ACCEPT
 	set firewall.@rule[-1].proto=tcp
 	set firewall.@rule[-1].dest_port=1883
+
+	set domoticz.@domoticz[0]=domoticz
+	set domoticz.@domoticz[0].disabled='1'
+	set domoticz.@domoticz[0].syslog='daemon'
+	set domoticz.@domoticz[0].sslwww='0'
+	set domoticz.@domoticz[0].userdata='/etc/domoticz/userdata/'
+	set domoticz.@domoticz[0].loglevel='1'
 	
 	commit 
 EOT
