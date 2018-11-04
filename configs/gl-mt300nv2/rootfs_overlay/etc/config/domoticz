@@ -9,8 +9,9 @@ config domoticz
 	option sslwww '0'
 	# CAUTION - by default, /var is not persistent accross reboots
 	# Don't forget the trailing / - domoticz requires it
-	#option userdata '/var/lib/domoticz/'
-	option userdata '/etc/domoticz/userdata/'
+	option userdata '/var/lib/domoticz/'
+	#option userdata '/etc/domoticz/userdata/'
+	option bkupdata '/etc/domoticz/userdata/'
 
 #config device
 #	option product '658/200/0'

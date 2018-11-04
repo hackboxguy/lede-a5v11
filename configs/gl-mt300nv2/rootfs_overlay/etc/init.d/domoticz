@@ -1,13 +1,14 @@
 #!/bin/sh /etc/rc.common
 
-START=99
+START=88
+STOP=88
 USE_PROCD=1
 PROG=/usr/bin/domoticz
 PIDFILE=/var/run/domoticz.pid
 
 start_domoticz() {
 	local section="$1"
-	local loglevel sslcert sslpass sslwww syslog userdata
+	local loglevel sslcert sslpass sslwww syslog userdata bkupdata
 
 	config_get loglevel "$section" "loglevel"
 	config_get sslcert "$section" "sslcert"
@@ -17,6 +18,7 @@ start_domoticz() {
 	config_get sslwww "$section" "sslwww"
 	config_get syslog "$section" "syslog"
 	config_get userdata "$section" "userdata" 
+	config_get bkupdata "$section" "bkupdata" 
 	#userdata /var/lib/domoticz
 
 	[ -n "$loglevel" ] && procd_append_param command -loglevel "$loglevel"
@@ -26,6 +28,8 @@ start_domoticz() {
 		mkdir -p "${userdata}"
 		chmod 0770 "$userdata"
 		chown domoticz:domoticz "$userdata"
+		cp "$bkupdata"/*.db "$userdata"
+		chown domoticz:domoticz "$userdata"/*.db
 	}
 
 	# By default, ${userdata}/scripts is a symlink to /etc/domoticz/scripts
@@ -51,6 +55,7 @@ start_domoticz() {
 }
 
 start_service() {
+echo "domoticz: starting the service!!!!!!!!!!!"	
 	procd_open_instance
 
 	procd_set_param command "$PROG"
@@ -68,4 +73,19 @@ start_service() {
 	procd_set_param user "domoticz"
 
 	procd_close_instance
+}
+
+backup_data()
+{                                                                                      
+        config_get userdata "$1" userdata                                            
+        config_get bkupdata "$1" bkupdata                                            
+	cp "$userdata"/*.db "$bkupdata"/
+}     
+
+stop_service() {
+	echo "domotics shutdown is called!!!!!!!!!"	
+	service_stop $PROG
+	config_load "domoticz"
+	config_foreach backup_data domoticz
+	echo "domotics shutdown is exiting!!!!!!!!"	
 }
