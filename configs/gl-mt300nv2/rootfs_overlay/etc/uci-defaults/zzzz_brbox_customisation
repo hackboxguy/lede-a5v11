@@ -1,15 +1,16 @@
 #!/bin/sh
 #uci -q get dhcp.odhcpd && exit 0
-DEV_ID_PREFIX="brbox-"
+DEFAULT_NAME="atom8box" #short name for automate-box
 DEF_LAN_IP="192.168.10.1"
 MACADDR=$(cat /sys/class/net/eth0/address | sed 's/://g')
+echo -e "$MACADDR\n$MACADDR" | passwd root #MACID is the default root-pw and wifi-pw, ex: e4956e4ddae3 
 uci -q batch <<-EOT
 	set network.lan.ipaddr=$DEF_LAN_IP
 	set wireless.radio0.disabled=0
-	set wireless.default_radio0.ssid=$DEV_ID_PREFIX$MACADDR
+	set wireless.default_radio0.ssid=$DEFAULT_NAME
 	set wireless.default_radio0.encryption='psk2+aes'
-	set wireless.default_radio0.key='supersecretpw'
-	set system.@system[0].hostname=$DEV_ID_PREFIX$MACADDR
+	set wireless.default_radio0.key=$MACADDR
+	set system.@system[0].hostname=$DEFAULT_NAME
 
 	add firewall rule
 	set firewall.@rule[-1].src=wan
