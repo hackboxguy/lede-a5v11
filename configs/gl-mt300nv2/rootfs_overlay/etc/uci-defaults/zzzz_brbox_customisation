@@ -1,8 +1,9 @@
 #!/bin/sh
 #uci -q get dhcp.odhcpd && exit 0
 DEFAULT_NAME="atom8box" #short name for automate-box
-DEF_LAN_IP="192.168.10.1"
-MACADDR=$(cat /sys/class/net/eth0/address | sed 's/://g')
+DEF_LAN_IP="192.168.8.1"
+#MACADDR=$(cat /sys/class/net/eth0/address | sed 's/://g')
+MACADDR=goodlife
 echo -e "$MACADDR\n$MACADDR" | passwd root #MACID is the default root-pw and wifi-pw, ex: e4956e4ddae3 
 uci -q batch <<-EOT
 	set network.lan.ipaddr=$DEF_LAN_IP
