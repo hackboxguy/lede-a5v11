@@ -1,0 +1,36 @@
+#!/bin/sh
+#uci -q get dhcp.odhcpd && exit 0
+DEFAULT_HOSTNAME="mynet" 
+DEFAULT_SSIDLAN="Mynet-LAN" 
+DEFAULT_SSIDWAN="Mynet-WAN" 
+DEFAULT_PW="mynet*123"
+DEF_LAN_IP="192.168.11.1"
+echo -e "$DEFAULT_PW\n$DEFAULT_PW" | passwd root #mynet*123 is default pw 
+uci -q batch <<-EOT
+
+	set wireless.default_radio0.ssid=$DEFAULT_SSIDLAN
+	set wireless.default_radio0.encryption='psk2+aes'
+	set wireless.default_radio0.key=$DEFAULT_PW
+	set wireless.radio0.disabled='0'
+	set wireless.radio0.channel='6'
+	set wireless.radio0.country='00'
+	set wireless.radio0.legacy_rates='1'
+	add wireless wifi-iface
+	set wireless.@wifi-iface[1]=wifi-iface
+	set wireless.@wifi-iface[1].network='wwan'
+	set wireless.@wifi-iface[1].ssid=$DEFAULT_SSIDWAN
+	set wireless.@wifi-iface[1].encryption='psk2+aes'
+	set wireless.@wifi-iface[1].device='radio0'
+	set wireless.@wifi-iface[1].mode='sta'
+	set wireless.@wifi-iface[1].bssid='AA:DB:03:CE:1E:34'
+	set wireless.@wifi-iface[1].key=$DEFAULT_PW
+	set network.lan.ipaddr=$DEF_LAN_IP
+	set network.wwan=interface
+	set network.wwan.proto='dhcp'
+	set dhcp.lan.start='2'
+	set dhcp.lan.limit='100'
+	set system.@system[0].hostname=$DEFAULT_HOSTNAME
+	set firewall.@zone[1].network='wan wan6 wwan'
+
+	commit 
+EOT
