@@ -26,6 +26,9 @@ uci -q batch <<-EOT
 	set wireless.@wifi-iface[1].mode='sta'
 	set wireless.@wifi-iface[1].bssid='AA:DB:03:CE:1E:34'
 	set wireless.@wifi-iface[1].key=$DEFAULT_PW
+	set wireless.radio0.channel='6'
+	set wireless.radio0.country='00'
+	set wireless.radio0.legacy_rates='1'
 	set firewall.@zone[1].network='wan wan6 wwan'
 	commit 
 EOT
