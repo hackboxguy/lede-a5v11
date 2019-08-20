@@ -1,0 +1,37 @@
+#!/bin/sh
+
+DEV_PREFIX=$(cat /mnt/dev-prefix.txt)
+DEV_NAME=$(cat /mnt/dev-name.txt)
+#check if required devices-hostname Prefix exists
+RESULT=$(cat /tmp/dhcp.leases | grep $DEV_PREFIX )
+if [ $? != "0" ]; then
+	echo "required hostname not found: nothing to do - device entry already exists"	
+	return 0
+fi
+
+#if exists, then extract its ip address
+HOSTIP=$(cat /tmp/dhcp.leases | grep $DEV_PREFIX | awk '{print $3}')
+if [ $? != "0" ]; then
+	echo "unable to extract host's ip address from lease file"	
+	return 0
+fi
+
+#map this ip address to a known hostname
+RESULT=$(uci get "dhcp.@domain[0]")
+if [ $? != "0" ]; then
+	echo "entry doesnt exists, need to add"	
+	RESULT=$(uci add dhcp domain)
+	if [ $? != "0" ]; then
+		echo "something is wrong, unable to add new dhcp.domain entry"
+		return 0
+	fi
+fi
+
+RESULT=$(uci set dhcp.@domain[0].name=$DEV_NAME)
+RESULT=$(uci set dhcp.@domain[0].ip=$HOSTIP)
+RESULT=$(uci set dhcp.@host[0]=host)
+RESULT=$(uci set dhcp.@domain[1]=domain)
+RESULT=$(uci commit dhcp)
+/etc/init.d/dnsmasq restart
+
+
