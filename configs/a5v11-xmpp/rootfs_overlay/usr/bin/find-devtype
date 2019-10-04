@@ -17,6 +17,7 @@ BD_TYP_X86_32="X86_32"
 BD_TYP_BBB="BBB"
 BD_TYP_A5V11="A5_V11"
 BD_TYP_NEXX3020="NEXX_3020"
+BD_TYP_GLMT300NV2="GL_MT300NV2"
 BD_TYP_DEFAULT="Unknown"
 ###############################################################################
 ReadRaspiType()
@@ -124,6 +125,12 @@ fi
 RESULT=$(cat /proc/cpuinfo | grep "machine" | grep "Nexx WT3020" )
 if [ $? = "0" ]; then
 	echo $BD_TYP_NEXX3020
+	return 0
+fi
+
+RESULT=$(cat /proc/cpuinfo | grep "machine" | grep "GL-MT300N-V2" )
+if [ $? = "0" ]; then
+	echo $BD_TYP_GLMT300NV2
 	return 0
 fi
 
