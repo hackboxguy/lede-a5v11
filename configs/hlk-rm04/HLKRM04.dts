@@ -97,7 +97,7 @@
 	state_default: pinctrl0 {
 		gpio {
 			ralink,group = "i2c", "jtag";
-			ralink,function = "gpio";
+			ralink,function = "gpio i2c";
 		};
 
 		uartf_gpio {
