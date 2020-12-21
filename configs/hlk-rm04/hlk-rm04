@@ -5,3 +5,6 @@ CONFIG_TARGET_ramips_rt305x_DEVICE_hlk-rm04=y
 # CONFIG_FEED_packages is not set
 # CONFIG_FEED_routing is not set
 # CONFIG_FEED_telephony is not set
+CONFIG_PACKAGE_i2c-tools=y
+CONFIG_PACKAGE_kmod-i2c-core=y
+CONFIG_PACKAGE_kmod-i2c-ralink=y
