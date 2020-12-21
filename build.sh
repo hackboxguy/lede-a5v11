@@ -29,6 +29,9 @@ echo $LEDE_SYSTEM_CONFIG > $LEDE_OUTPUT_FOLDER/BoardConfig.txt
 pushd .
 cd $LEDE_FOLDER
 ln -s ../configs/$LEDE_SYSTEM_CONFIG/rootfs_overlay files #create custom-files overlay
+#copy custom dts files: TODO: accest target-dts path from cmdline-args
+cp ../configs/$LEDE_SYSTEM_CONFIG/*.dts  target/linux/ramips/dts/
+cp ../configs/$LEDE_SYSTEM_CONFIG/*.dtsi target/linux/ramips/dts/
 ./scripts/feeds update -a
 
 #todo: update feeds/package.index file with custom package data.
