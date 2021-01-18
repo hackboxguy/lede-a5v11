@@ -1,0 +1,50 @@
+CONFIG_TARGET_ramips=y
+CONFIG_TARGET_ramips_mt76x8=y
+CONFIG_TARGET_ramips_mt76x8_DEVICE_gl-mt300n-v2=y
+CONFIG_DEVEL=y
+CONFIG_DOWNLOAD_FOLDER="$(TOPDIR)/../brbox-sources"
+CONFIG_LIGHTTPD_SSL=y
+CONFIG_LOCALMIRROR="$(TOPDIR)/../brbox-pkgs"
+CONFIG_OPENSSL_WITH_DEPRECATED=y
+CONFIG_OPENSSL_WITH_EC=y
+CONFIG_OPENSSL_WITH_NPN=y
+CONFIG_OPENSSL_WITH_PSK=y
+CONFIG_OPENSSL_WITH_SRP=y
+CONFIG_PACKAGE_AdCmn=y
+CONFIG_PACKAGE_AdDisp=y
+CONFIG_PACKAGE_AdSttngs=y
+CONFIG_PACKAGE_avahi-daemon-service-http=y
+CONFIG_PACKAGE_avahi-dbus-daemon=y
+CONFIG_PACKAGE_ca-bundle=y
+CONFIG_PACKAGE_dbus=y
+# CONFIG_PACKAGE_dnsmasq is not set
+# CONFIG_PACKAGE_firewall is not set
+CONFIG_PACKAGE_libavahi-dbus-support=y
+CONFIG_PACKAGE_libcares=y
+CONFIG_PACKAGE_libdaemon=y
+CONFIG_PACKAGE_libdbus=y
+CONFIG_PACKAGE_libexpat=y
+CONFIG_PACKAGE_libopenssl=y
+CONFIG_PACKAGE_libpcre=y
+CONFIG_PACKAGE_librt=y
+CONFIG_PACKAGE_libstdcpp=y
+CONFIG_PACKAGE_libuuid=y
+CONFIG_PACKAGE_lighttpd=y
+# CONFIG_PACKAGE_opkg is not set
+# CONFIG_PACKAGE_ppp is not set
+CONFIG_PACKAGE_sysmgr=y
+CONFIG_PACKAGE_zlib=y
+CONFIG_PACKAGE_kmod-ipt-conntrack=y
+CONFIG_PACKAGE_kmod-ipt-nat=y
+CONFIG_PACKAGE_kmod-lib-crc-ccitt=y
+# CONFIG_PACKAGE_kmod-mppe is not set
+CONFIG_PACKAGE_kmod-nf-conntrack6=y
+CONFIG_PACKAGE_kmod-nf-nat=y
+CONFIG_PACKAGE_kmod-ppp=y
+# CONFIG_PACKAGE_kmod-ppp-synctty is not set
+# CONFIG_PACKAGE_kmod-pppoa is not set
+CONFIG_PACKAGE_kmod-pppoe=y
+# CONFIG_PACKAGE_kmod-pppol2tp is not set
+CONFIG_PACKAGE_kmod-pppox=y
+# CONFIG_PACKAGE_kmod-pptp is not set
+CONFIG_PACKAGE_kmod-slhc=y

@@ -28,6 +28,10 @@ cat ../packages/gloox/pkg.index >> feeds/packages.index
 ln -s ../../../../packages/xmproxy feeds/packages/utils/xmproxy
 cat ../packages/xmproxy/pkg.index >> feeds/packages.index
 
+#bboxsms
+ln -s ../../../../packages/bboxsms feeds/packages/utils/bboxsms
+cat ../packages/bboxsms/pkg.index >> feeds/packages.index
+
 #onion
 ln -s ../../../../packages/onion feeds/packages/libs/onion
 cat ../packages/onion/pkg.index >> feeds/packages.index
